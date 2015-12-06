@@ -1,4 +1,4 @@
-var userData3 = {
+module.exports= {
   "transaction": [
     {
       "CONTAINER": "bank",

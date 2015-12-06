@@ -5,32 +5,54 @@
 
 var Promise = require('bluebird');
 var mongoose = require('mongoose');
-var Transaction = require('./models/index.js');
-//var Transaction = models.Transaction;
-
+var Transaction = require('./models/index.js').Transaction;
+var UserName = require('./models/index.js').UserName;
 
 mongoose.connect('mongodb://localhost/budgeteer');
 
 
-var userData = require('./userData.js');
+var userData2 = require('./userData2.js');
+var userData3 = require('./userData3.js');
 
 mongoose.connection.on('open', function() {
   mongoose.connection.db.dropDatabase(function() {
 
     console.log("Dropped old data, now inserting data");
 
-    var mapOfCreatedDocuments = userData.transaction.map(function(transaction) {
+    UserName.create({
+      name: "john"
+    });
+    UserName.create({
+      name: "jane"
+    });
+
+    var mapOfCreatedDocuments = userData2.transaction.map(function(transaction) {
 
       return Transaction.create({
         amount: transaction.amount.amount,
         baseType: transaction.baseType,
         category: transaction.category,
         date: transaction.date.date,
-        container: transaction.CONTAINER
+        container: transaction.CONTAINER,
+        userName: 'john'
+
       })
     })
 
-    Promise.all(mapOfCreatedDocuments)
+    var mapOfCreatedDocuments2 = userData3.transaction.map(function(transaction) {
+
+      return Transaction.create({
+        amount: transaction.amount.amount,
+        baseType: transaction.baseType,
+        category: transaction.category,
+        date: transaction.date.date,
+        container: transaction.CONTAINER,
+        userName: 'jane'
+
+      })
+    })
+    var array = mapOfCreatedDocuments.concat(mapOfCreatedDocuments2);
+    Promise.all(array)
       .then(function() {
         mongoose.connection.close();
     })

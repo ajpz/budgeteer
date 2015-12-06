@@ -12,8 +12,13 @@ var transactionSchema = new Schema ({
 	baseType: { type: String },
 	category: { type: String, required: true }, // dining or entertainment...
 	date: { type: String, required: true }, // '2014-10-14',
-	container: { type: String, required: true }
+	container: { type: String, required: true },
+	userName: {type: String}
 });
+
+var userSchema = new Schema ({
+	name: {type: String, required: true}
+})
 
 transactionSchema.statics.findCreditTimeSeries = function(baseType, container) {
   //console.log(baseType);
@@ -29,9 +34,9 @@ transactionSchema.statics.findCreditTimeSeries = function(baseType, container) {
     })
 }
 
-transactionSchema.statics.findCategoryTimeSeries = function(baseType) {
+transactionSchema.statics.findCategoryTimeSeries = function(baseType, name ) {
   console.log('in statics');
-  return this.find({ baseType: baseType }).exec()
+  return this.find({ baseType: baseType, userName: name}).exec()
     .then(function(timeSeries) {
       console.log('in statics: ', timeSeries)
       return timeSeries.map(function(transaction) {
@@ -39,7 +44,8 @@ transactionSchema.statics.findCategoryTimeSeries = function(baseType) {
           date: transaction.date,
           amount: transaction.amount,
           container: transaction.container,
-          category: transaction.category
+          category: transaction.category,
+					userName: transaction.userName
         }
       })
     })
@@ -47,5 +53,9 @@ transactionSchema.statics.findCategoryTimeSeries = function(baseType) {
 
 
 var Transaction = mongoose.model('transaction', transactionSchema);
+var UserName = mongoose.model('UserName', userSchema);
 
-module.exports = Transaction;
+module.exports = {
+	Transaction: Transaction,
+	UserName: UserName
+};
