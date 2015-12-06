@@ -29,8 +29,6 @@ swig.setDefaults({cache: false});
 
 app.use('/', require('./routes'));
 
-app.use('/api', require('./routes/api'));
-
 app.use(function(req, res, next) {
 	var err = new Error('Not Found');
 	err.status = 404;
