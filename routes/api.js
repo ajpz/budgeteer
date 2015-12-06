@@ -8,7 +8,7 @@ var UserName = require('../models').UserName;
 module.exports = api;
 
 // /api/
-api.get('/users/:id/transactions/', function(req, res, next) {
+api.get('/users/:name/transactions/', function(req, res, next) {
   var _id = req.params.id;
 
 	Transaction.find({}).exec() //add transaction
