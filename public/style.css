@@ -1,0 +1,134 @@
+body {
+  background: #2e2c35;
+  color: #c1ff00;
+  font-family: 'Lato', sans-serif;
+}
+
+.trophy-height {
+  height: 140px
+}
+
+.brand {
+  padding-top: 4vh;
+  padding-bottom: 2vh;
+}
+
+.goals {
+  font-size: 14px;
+}
+
+.black {
+  color: black;
+}
+
+.white {
+  color: white;
+}
+
+.green {
+  background: #c1ff00;
+}
+
+.purp-back {
+  background: #8758a4;
+}
+
+.dark-purp-back {
+  background-color: #574c61;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.spacing {
+  margin-left: 200px;
+}
+
+.add-marg{
+  margin-right: 8%;
+}
+
+.circle {
+  padding: 50px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.trophy {
+  padding: 25px;
+  text-align: center;
+  border-radius: 50%;
+  left: 60px;
+}
+
+.purple-background {
+  background: #8758a4;
+  width: 120;
+  z-index: -1;
+  position: relative;
+}
+
+.rank {
+  background: #8758a4;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  z-index: -1;
+  position: relative;
+}
+
+.rank-sm {
+  color: #2e2c35;
+  font-size: 10px;
+}
+
+.summary-big {
+  color: #8758a4;
+  font-size: 75px;
+}
+
+.padding {
+  padding: 20px;
+}
+
+.ranking-goals {
+  margin: 40 0 40 0;
+  font-size: 20px; 
+  margin-top:100px;
+
+}
+
+.icons {
+  padding: 40 0;
+}
+
+.yodlee {
+  font-size: 10px ;
+}
+
+.budgeteer {
+  font-size: 100px;
+}
+
+.ranking {
+  padding-left: 20px;
+}
+.bottom {
+  margin: 0 0 20px 0;
+}
+
+.add-top {
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+#mycanvas {
+margin: 0 auto;
+}
+#mycanvas1 {
+margin: 0 auto;
+}
+
+.height {
+  height: 360px;
+}
+
+
