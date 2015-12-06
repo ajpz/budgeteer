@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended : false }));
 
 //SWIG Stuff
 // point res.render to the proper directory
-app.set('views', __dirname + '/public');
+app.set('views', '.');
 // have res.render work with html files
 app.set('view engine', 'html');
 // when res.render works with html files

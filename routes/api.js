@@ -58,6 +58,6 @@ api.get('/users/:name/transactions/:baseType/category/summary', function(req, re
         var count = dataObj[key].length;
         summaryData[key] = [{sum: sum, numberOfTrans: count}]
       }
-			res.json(summaryData);
+			res.render('index.html', {data : summaryData });
 		})
 })
