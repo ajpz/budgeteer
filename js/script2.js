@@ -1,19 +1,19 @@
 $(document).ready(function() {
 
-  var ctx = $("#mycanvas").get(0).getContext("2d");
+  var ctx2 = $("#mycanvas2").get(0).getContext("2d");
 
   var john_debit = [{
-    value: 900.00,
+    value: 1800,
     color: "cornflowerblue",
     highlight: "lightskyblue",
     label: "Online Services"
   }, {
-    value: 45001.62,
+    value: 900,
     color: "lightgreen",
     highlight: "yellowgreen",
     label: "ATM / Cash Withdrawals"
   }, {
-    value: 1800,
+    value: 45001.62,
     color: "orange",
     highlight: "darkorange",
     label: "Loans"
@@ -23,17 +23,17 @@ $(document).ready(function() {
 		highlight: "darkred",
 		label: "Rent"
 	}, {
-		value: 5381.70,
+		value: 5381.71,
 		color: "lightblue",
 		highlight: "blue",
 		label: "Gasoline"
 	}, {
-		value: 503.68,
+		value: 18611.62,
 		color: "lightpink",
 		highlight: "pink",
 		label: "Restaurants"
 	}, {
-		value: 18611.62,
+		value: 503.67,
 		color: "gray",
 		highlight: "darkgray",
 		label: "Other Bills"
@@ -48,16 +48,16 @@ $(document).ready(function() {
 		highlight: "purple",
 		label: "General Merchandise"
 	}, {
-		value: 808.56,
+		value: 20000,
 		color: "turquoise",
 		highlight: "lightgreen",
 		label: "Entertainment"
 	}, {
-		value: 20000,
+		value: 808.56,
 		color: "orange",
 		highlight: "darkorange",
 		label: "Home Improvement"
 	}];
 
-  var chart = new Chart(ctx).Doughnut(john_debit);
+  var chart = new Chart(ctx2).Doughnut(john_debit);
 });
