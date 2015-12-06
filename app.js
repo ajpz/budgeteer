@@ -10,6 +10,8 @@ var app = express();
 // set-up morgan, body-parser, express.static
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname + '/public')));
+app.use(express.static(path.join(__dirname)));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : false }));
 

@@ -1,12 +1,18 @@
-var express = require('express'); 
-var bluebird = require('bluebird'); 
+var express = require('express');
+var bluebird = require('bluebird');
 
 
-var Router = express.Router(); 
+var Router = express.Router();
 
-Router.get('/', function(req, res, next) {
-	res.status(200).send('Hello World');
+Router.get('/dashboard/:name', function(req, res, next) {
+	if(req.params.name === 'john'){
+			res.render('index.html');
+	}else {
+			res.render('index1.html');
+	}
+
 })
 
 
-module.exports = Router; 
+
+module.exports = Router;

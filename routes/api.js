@@ -43,10 +43,8 @@ api.get('/users/:name/transactions/:baseType/category/all', function(req, res, n
 api.get('/users/:name/transactions/:baseType/category/summary', function(req, res, next){
   Transaction.findCategoryTimeSeries(req.params.baseType.toUpperCase(), req.params.name)
 		.then(function(ts) {
-		console.log('here', ts)
 			var dataObj = {};  // { Rent: [{ date: date, amoutn: amount }] }
 			ts.forEach(function(tx) {
-				console.log('hahah', tx);
 				if(!dataObj[tx.category]) dataObj[tx.category] = [];
 				dataObj[tx.category].push(tx);
 			})
@@ -58,6 +56,7 @@ api.get('/users/:name/transactions/:baseType/category/summary', function(req, re
         var count = dataObj[key].length;
         summaryData[key] = [{sum: sum, numberOfTrans: count}]
       }
-			res.render('index.html', {data : summaryData });
+      res.render('index.html');
 		})
+
 })
