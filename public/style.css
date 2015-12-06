@@ -3,7 +3,9 @@ body {
   color: #c1ff00;
   font-family: 'Lato', sans-serif;
 }
-
+.advice {
+  padding-bottom: 2vh;
+}
 .trophy-height {
   height: 140px
 }
@@ -39,8 +41,8 @@ body {
   font-size: 20px;
 }
 
-.spacing {
-  margin-left: 200px;
+.heading-space {
+  margin-bottom: 5vh;
 }
 
 .add-marg{
@@ -85,13 +87,9 @@ body {
   font-size: 75px;
 }
 
-.padding {
-  padding: 20px;
-}
-
 .ranking-goals {
   margin: 40 0 40 0;
-  font-size: 20px; 
+  font-size: 20px;
   margin-top:100px;
 
 }
@@ -130,5 +128,3 @@ margin: 0 auto;
 .height {
   height: 360px;
 }
-
-
